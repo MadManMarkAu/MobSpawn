@@ -47,14 +47,15 @@ public class MobSpawn extends JavaPlugin {
 
 	public void setupPermissions() {
 		Plugin perm = this.getServer().getPluginManager().getPlugin("Permissions");
-			
+
+
 		if (this.Permissions == null) {
 			if (perm!= null) {
 				this.getServer().getPluginManager().enablePlugin(perm);
 				this.Permissions = ((Permissions) perm).getHandler();
 			}
 			else {
-				log.info(pdfFile.getName() + " version " + pdfFile.getVersion() + "not enabled. Permissions not detected");
+				log.info(pdfFile.getName() + " version " + pdfFile.getVersion() + " not enabled. Permissions not detected");
 				this.getServer().getPluginManager().disablePlugin(this);
 			}
 		}
@@ -98,6 +99,8 @@ public class MobSpawn extends JavaPlugin {
 					
 					params.setEnabled(false);
 					setUserParams(player, params);
+
+					player.sendMessage(ChatColor.YELLOW + "MobSpawn is bow off.");
 				} else {
 					MobSpawnParams params = getUserParams(player);
 					CreatureType creature = CreatureType.fromName(args[0]);
@@ -111,7 +114,7 @@ public class MobSpawn extends JavaPlugin {
 					params.setSelectedMob(creature);
 					setUserParams(player, params);
 					
-					player.sendMessage(ChatColor.YELLOW + "Spawn set to " + creature.getName());
+					player.sendMessage(ChatColor.YELLOW + "MobSpawn set to " + creature.getName());
 				}
 				
 				return true;
