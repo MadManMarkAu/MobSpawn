@@ -1,0 +1,11 @@
+name: MobSpawn
+version: 0.2.3
+main: net.madmanmarkau.MobSpawn.MobSpawn
+author: MadManMarkAu
+description: >
+             Use a bow to spawn mobs.
+commands:
+  madmanmarkau_mobspawn:
+    description: Enable/disable/select the plugin/mob.
+    aliases: mobspawn
+    usage: /<command> (<mobname>|OFF)

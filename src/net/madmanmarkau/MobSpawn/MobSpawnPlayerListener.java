@@ -24,7 +24,7 @@ public class MobSpawnPlayerListener extends PlayerListener {
 			if (params.isEnabled()
 					&& player.isOnline()
 					&& player.getItemInHand().getTypeId() == Material.BOW.getId()
-					&& plugin.Permissions.has(player, "mobspawn.spawn")) {
+					&& MobSpawnPermissions.has(player, "mobspawn.spawn")) {
 	
 				int[] ignoreList = {0, 8, 9, 10, 11, 51};
 				
